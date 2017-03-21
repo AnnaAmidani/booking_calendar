@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>Anna's jQuery Week Calendar</title>
+  <link rel='stylesheet' type='text/css' href='libs/jquery-ui-1.11.4.custom/jquery-ui.min.css' />  
+  <link rel='stylesheet' type='text/css' href='libs/css/jquery.weekcalendar.css' />
+  <link rel='stylesheet' type='text/css' href='css/JQGCalendar_json.css' />
+
+  <script type='text/javascript' src='libs/jquery-2.2.3.min.js'></script>
+  <script type='text/javascript' src='libs/jquery-migrate-1.3.0.min.js'></script>
+
+
+  <script type='text/javascript' src='libs/jquery-ui-1.11.4.custom/jquery-ui.min.js'></script>
+  <script type='text/javascript' src='libs/date.js'></script>
+  <script type='text/javascript' src='libs/jquery.weekcalendar.js'></script>
+  <script type='text/javascript' src='gCalWrapper.js'></script>
+  <script type='text/javascript' src='import_test.js'></script> 
+<script src="https://apis.google.com/js/client.js?onload=checkAuth">
+</script>
+</head>
+<body>
+  <h1>Anna's Week Calendar with JSON data source</h1>
+
+  <p class="description">
+    This is Anna's test weekly calendar
+  </p>
+
+
+  <div id="calendar"></div>
+  	<div id="event_edit_container" style="display:none">
+		<form>
+			<input type="hidden" />
+			<ul>
+				<li>
+					<span>Date: </span><span class="date_holder"></span> 
+				</li>
+				<li>
+					<label for="start">Start Time: </label><select name="start"><option value="">Select Start Time</option></select>
+				</li>
+				<li>
+					<label for="end">End Time: </label><select name="end"><option value="">Select End Time</option></select>
+				</li>
+				<li>
+					<label for="title">Title: </label><input type="text" name="title" />
+				</li>
+				<li>
+					<label for="body">Body: </label><textarea name="body"></textarea>
+				</li>
+			</ul>
+		</form>
+	</div>
+
+    <div id="authorize-div" style="display: none">
+      <span>Authorize access to Google Calendar API</span>
+      <!--Button for the user to click to initiate auth sequence -->
+      <button id="authorize-button" onclick="handleAuthClick(event)">
+        Authorize
+      </button>
+    </div>
+
+</body>
+</html>
